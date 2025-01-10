@@ -1,0 +1,459 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.device_auto_launch"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/debug/AndroidManifest.xml:6:5-66
+15-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/debug/AndroidManifest.xml:6:22-64
+16    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+16-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:4:5-75
+16-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:4:22-72
+17    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+17-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:5:5-81
+17-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:5:22-78
+18    <uses-permission android:name="android.permission.REBOOT" />
+18-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:6:5-65
+18-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:6:22-62
+19    <uses-permission android:name="android.permission.WAKE_LOCK" />
+19-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:7:5-67
+19-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:7:22-65
+20    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+20-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:8:5-77
+20-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:8:22-75
+21    <uses-permission android:name="android.permission.MANAGE_LOCK_TASKS" />
+21-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:9:5-75
+21-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:9:22-73
+22    <uses-permission android:name="android.permission.MANAGE_DEVICE_ADMINS" />
+22-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:10:5-78
+22-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:10:22-76
+23    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+23-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:11:5-75
+23-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:11:22-72
+24    <!--
+25 Required to query activities that can process text, see:
+26         https://developer.android.com/training/package-visibility and
+27         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+28
+29         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+30    -->
+31    <queries>
+31-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:84:5-89:15
+32        <intent>
+32-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:85:9-88:18
+33            <action android:name="android.intent.action.PROCESS_TEXT" />
+33-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:86:13-72
+33-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:86:21-70
+34
+35            <data android:mimeType="text/plain" />
+35-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:87:13-50
+35-->/home/vassar/StudioProjects/device_auto_launch/android/app/src/main/AndroidManifest.xml:87:19-48
+36        </intent>
+37    </queries>
+38
+39    <uses-permission android:name="android.permission.CAMERA" />
+39-->[:camera_android] /home/vassar/.pub-cache/hosted/pub.dev/camera_android-0.9.8+3/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-65
+39-->[:camera_android] /home/vassar/.pub-cache/hosted/pub.dev/camera_android-0.9.8+3/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-62
+40    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+40-->[:camera_android] /home/vassar/.pub-cache/hosted/pub.dev/camera_android-0.9.8+3/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-71
+40-->[:camera_android] /home/vassar/.pub-cache/hosted/pub.dev/camera_android-0.9.8+3/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-68
+41    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permissions options for the `notification` group -->
+41-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
+41-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:22-76
+42    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+42-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:5-77
+42-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:22-74
+43    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+43-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:26:5-82
+43-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:26:22-79
+44    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+44-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:25:5-79
+44-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:25:22-76
+45    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+45-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:26:5-88
+45-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:26:22-85
+46    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+46-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:27:5-82
+46-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:27:22-79
+47    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+47-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:26:5-110
+47-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:26:22-107
+48
+49    <permission
+49-->[androidx.core:core:1.9.0] /home/vassar/.gradle/caches/transforms-3/cd029caa73742c9274e432966ee47c8f/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+50        android:name="com.example.device_auto_launch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+50-->[androidx.core:core:1.9.0] /home/vassar/.gradle/caches/transforms-3/cd029caa73742c9274e432966ee47c8f/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+51        android:protectionLevel="signature" />
+51-->[androidx.core:core:1.9.0] /home/vassar/.gradle/caches/transforms-3/cd029caa73742c9274e432966ee47c8f/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+52
+53    <uses-permission android:name="com.example.device_auto_launch.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+53-->[androidx.core:core:1.9.0] /home/vassar/.gradle/caches/transforms-3/cd029caa73742c9274e432966ee47c8f/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+53-->[androidx.core:core:1.9.0] /home/vassar/.gradle/caches/transforms-3/cd029caa73742c9274e432966ee47c8f/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+54
+55    <application
+56        android:name="android.app.Application"
+57        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+57-->[androidx.core:core:1.9.0] /home/vassar/.gradle/caches/transforms-3/cd029caa73742c9274e432966ee47c8f/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+58        android:debuggable="true"
+59        android:directBootAware="true"
+60        android:icon="@mipmap/ic_launcher"
+61        android:label="device_auto_launch" >
+62        <activity
+63            android:name="com.example.device_auto_launch.MainActivity"
+64            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+65            android:exported="true"
+66            android:hardwareAccelerated="true"
+67            android:launchMode="singleTop"
+68            android:showOnLockScreen="true"
+69            android:taskAffinity=""
+70            android:theme="@style/LaunchTheme"
+71            android:turnScreenOn="true"
+72            android:windowSoftInputMode="adjustResize" >
+73
+74            <!--
+75                 Specifies an Android theme to apply to this Activity as soon as
+76                 the Android process has started. This theme is visible to the user
+77                 while the Flutter UI initializes. After that, this theme continues
+78                 to determine the Window background behind the Flutter UI.
+79            -->
+80            <meta-data
+81                android:name="io.flutter.embedding.android.NormalTheme"
+82                android:resource="@style/NormalTheme" />
+83
+84            <intent-filter>
+85                <action android:name="android.intent.action.MAIN" />
+86
+87                <category android:name="android.intent.category.LAUNCHER" />
+88            </intent-filter>
+89        </activity>
+90
+91        <receiver
+92            android:name="com.example.device_auto_launch.BootReceiver"
+93            android:directBootAware="true"
+94            android:enabled="true"
+95            android:exported="true" >
+96            <intent-filter>
+97                <action android:name="android.intent.action.BOOT_COMPLETED" />
+98                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+99                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+100
+101                <category android:name="android.intent.category.DEFAULT" />
+102            </intent-filter>
+103        </receiver>
+104        <receiver
+105            android:name="com.example.device_auto_launch.AlarmReceiver"
+106            android:exported="true" />
+107        <receiver
+108            android:name="com.example.device_auto_launch.MyDeviceAdminReceiver"
+109            android:enabled="true"
+110            android:exported="true"
+111            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+112            <meta-data
+113                android:name="android.app.device_admin"
+114                android:resource="@xml/device_admin_receiver" />
+115
+116            <intent-filter>
+117                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+118            </intent-filter>
+119        </receiver>
+120            />
+121        <!--
+122             Don't delete the meta-data below.
+123             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+124        -->
+125        <meta-data
+126            android:name="flutterEmbedding"
+127            android:value="2" />
+128
+129        <service
+129-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:9-19:72
+130            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
+130-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-107
+131            android:exported="false"
+131-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+132            android:permission="android.permission.BIND_JOB_SERVICE" />
+132-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-69
+133        <service
+133-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:9-26:19
+134            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
+134-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-97
+135            android:exported="false" >
+135-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-37
+136            <intent-filter>
+136-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:29
+137                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+137-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-78
+137-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:25-75
+138            </intent-filter>
+139        </service>
+140
+141        <receiver
+141-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-35:20
+142            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
+142-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-98
+143            android:exported="true"
+143-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-36
+144            android:permission="com.google.android.c2dm.permission.SEND" >
+144-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-73
+145            <intent-filter>
+145-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-34:29
+146                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+146-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-81
+146-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-78
+147            </intent-filter>
+148        </receiver>
+149
+150        <service
+150-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-41:19
+151            android:name="com.google.firebase.components.ComponentDiscoveryService"
+151-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:18-89
+152            android:directBootAware="true"
+152-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+153            android:exported="false" >
+153-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:56:13-37
+154            <meta-data
+154-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-40:85
+155                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
+155-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:17-128
+156                android:value="com.google.firebase.components.ComponentRegistrar" />
+156-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:17-82
+157            <meta-data
+157-->[:firebase_core] /home/vassar/.pub-cache/hosted/pub.dev/firebase_core-2.32.0/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+158                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+158-->[:firebase_core] /home/vassar/.pub-cache/hosted/pub.dev/firebase_core-2.32.0/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+159                android:value="com.google.firebase.components.ComponentRegistrar" />
+159-->[:firebase_core] /home/vassar/.pub-cache/hosted/pub.dev/firebase_core-2.32.0/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+160            <meta-data
+160-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:57:13-59:85
+161                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+161-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:58:17-122
+162                android:value="com.google.firebase.components.ComponentRegistrar" />
+162-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:59:17-82
+163            <meta-data
+163-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:60:13-62:85
+164                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+164-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:61:17-119
+165                android:value="com.google.firebase.components.ComponentRegistrar" />
+165-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:62:17-82
+166            <meta-data
+166-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:37:13-39:85
+167                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+167-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:38:17-139
+168                android:value="com.google.firebase.components.ComponentRegistrar" />
+168-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:39:17-82
+169            <meta-data
+169-->[com.google.firebase:firebase-iid:21.1.0] /home/vassar/.gradle/caches/transforms-3/2980f0b5c8d653de9d6422c0def1b788/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:32:13-34:85
+170                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+170-->[com.google.firebase:firebase-iid:21.1.0] /home/vassar/.gradle/caches/transforms-3/2980f0b5c8d653de9d6422c0def1b788/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:33:17-96
+171                android:value="com.google.firebase.components.ComponentRegistrar" />
+171-->[com.google.firebase:firebase-iid:21.1.0] /home/vassar/.gradle/caches/transforms-3/2980f0b5c8d653de9d6422c0def1b788/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:34:17-82
+172            <meta-data
+172-->[com.google.firebase:firebase-installations:18.0.0] /home/vassar/.gradle/caches/transforms-3/35991dae846a69884d4b0e5ff0168faa/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+173                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+173-->[com.google.firebase:firebase-installations:18.0.0] /home/vassar/.gradle/caches/transforms-3/35991dae846a69884d4b0e5ff0168faa/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+174                android:value="com.google.firebase.components.ComponentRegistrar" />
+174-->[com.google.firebase:firebase-installations:18.0.0] /home/vassar/.gradle/caches/transforms-3/35991dae846a69884d4b0e5ff0168faa/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+175            <meta-data
+175-->[com.google.firebase:firebase-installations:18.0.0] /home/vassar/.gradle/caches/transforms-3/35991dae846a69884d4b0e5ff0168faa/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+176                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+176-->[com.google.firebase:firebase-installations:18.0.0] /home/vassar/.gradle/caches/transforms-3/35991dae846a69884d4b0e5ff0168faa/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+177                android:value="com.google.firebase.components.ComponentRegistrar" />
+177-->[com.google.firebase:firebase-installations:18.0.0] /home/vassar/.gradle/caches/transforms-3/35991dae846a69884d4b0e5ff0168faa/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+178            <meta-data
+178-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/vassar/.gradle/caches/transforms-3/ecb99453ec6ea4b6c6e830b4f7ad4932/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+179                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+179-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/vassar/.gradle/caches/transforms-3/ecb99453ec6ea4b6c6e830b4f7ad4932/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+180                android:value="com.google.firebase.components.ComponentRegistrar" />
+180-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/vassar/.gradle/caches/transforms-3/ecb99453ec6ea4b6c6e830b4f7ad4932/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+181            <meta-data
+181-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+182                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+182-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+183                android:value="com.google.firebase.components.ComponentRegistrar" />
+183-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+184            <meta-data
+184-->[com.google.firebase:firebase-datatransport:18.2.0] /home/vassar/.gradle/caches/transforms-3/af41eaea73817f6cabe907a9662fa9b3/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:25:13-27:85
+185                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+185-->[com.google.firebase:firebase-datatransport:18.2.0] /home/vassar/.gradle/caches/transforms-3/af41eaea73817f6cabe907a9662fa9b3/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:26:17-115
+186                android:value="com.google.firebase.components.ComponentRegistrar" />
+186-->[com.google.firebase:firebase-datatransport:18.2.0] /home/vassar/.gradle/caches/transforms-3/af41eaea73817f6cabe907a9662fa9b3/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:27:17-82
+187        </service>
+188
+189        <provider
+189-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:43:9-47:38
+190            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
+190-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-102
+191            android:authorities="com.example.device_auto_launch.flutterfirebasemessaginginitprovider"
+191-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-88
+192            android:exported="false"
+192-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:46:13-37
+193            android:initOrder="99" />
+193-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:47:13-35
+194
+195        <receiver
+195-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:29:9-40:20
+196            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+196-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:30:13-78
+197            android:exported="true"
+197-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:31:13-36
+198            android:permission="com.google.android.c2dm.permission.SEND" >
+198-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:32:13-73
+199            <intent-filter>
+199-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:32:13-34:29
+200                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+200-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:17-81
+200-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:33:25-78
+201            </intent-filter>
+202
+203            <meta-data
+203-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:37:13-39:40
+204                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+204-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:38:17-92
+205                android:value="true" />
+205-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:39:17-37
+206        </receiver>
+207        <!--
+208             FirebaseMessagingService performs security checks at runtime,
+209             but set to not exported to explicitly avoid allowing another app to call it.
+210        -->
+211        <service
+211-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:46:9-53:19
+212            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+212-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:47:13-82
+213            android:directBootAware="true"
+213-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:48:13-43
+214            android:exported="false" >
+214-->[com.google.firebase:firebase-messaging:24.1.0] /home/vassar/.gradle/caches/transforms-3/6991338be3a3027387bfdd854fe43c01/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:49:13-37
+215            <intent-filter android:priority="-500" >
+215-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:29
+216                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+216-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-78
+216-->[:firebase_messaging] /home/vassar/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.10/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:25-75
+217            </intent-filter>
+218        </service>
+219
+220        <property
+220-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:30:9-32:61
+221            android:name="android.adservices.AD_SERVICES_CONFIG"
+221-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:31:13-65
+222            android:resource="@xml/ga_ad_services_config" />
+222-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/vassar/.gradle/caches/transforms-3/42ab32bf071381beef689edbf227bdd6/transformed/jetified-play-services-measurement-api-22.1.2/AndroidManifest.xml:32:13-58
+223
+224        <receiver
+224-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:29:9-33:20
+225            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+225-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:30:13-85
+226            android:enabled="true"
+226-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:31:13-35
+227            android:exported="false" >
+227-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:32:13-37
+228        </receiver>
+229
+230        <service
+230-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:35:9-38:40
+231            android:name="com.google.android.gms.measurement.AppMeasurementService"
+231-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:36:13-84
+232            android:enabled="true"
+232-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:37:13-35
+233            android:exported="false" />
+233-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:38:13-37
+234        <service
+234-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:39:9-43:72
+235            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+235-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:40:13-87
+236            android:enabled="true"
+236-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:41:13-35
+237            android:exported="false"
+237-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:42:13-37
+238            android:permission="android.permission.BIND_JOB_SERVICE" />
+238-->[com.google.android.gms:play-services-measurement:22.1.2] /home/vassar/.gradle/caches/transforms-3/7870b95cdd2d2f455d7534c365e4058b/transformed/jetified-play-services-measurement-22.1.2/AndroidManifest.xml:43:13-69
+239
+240        <uses-library
+240-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/vassar/.gradle/caches/transforms-3/192367dc6b083e7c58715ae58c5e1f9c/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
+241            android:name="android.ext.adservices"
+241-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/vassar/.gradle/caches/transforms-3/192367dc6b083e7c58715ae58c5e1f9c/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
+242            android:required="false" />
+242-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/vassar/.gradle/caches/transforms-3/192367dc6b083e7c58715ae58c5e1f9c/transformed/jetified-ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
+243        <uses-library
+243-->[androidx.window:window:1.0.0-beta04] /home/vassar/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+244            android:name="androidx.window.extensions"
+244-->[androidx.window:window:1.0.0-beta04] /home/vassar/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+245            android:required="false" />
+245-->[androidx.window:window:1.0.0-beta04] /home/vassar/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+246        <uses-library
+246-->[androidx.window:window:1.0.0-beta04] /home/vassar/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+247            android:name="androidx.window.sidecar"
+247-->[androidx.window:window:1.0.0-beta04] /home/vassar/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+248            android:required="false" />
+248-->[androidx.window:window:1.0.0-beta04] /home/vassar/.gradle/caches/transforms-3/f302e75fb7efd781bcf1a29281c188da/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+249
+250        <provider
+250-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+251            android:name="com.google.firebase.provider.FirebaseInitProvider"
+251-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+252            android:authorities="com.example.device_auto_launch.firebaseinitprovider"
+252-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+253            android:directBootAware="true"
+253-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+254            android:exported="false"
+254-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+255            android:initOrder="100" />
+255-->[com.google.firebase:firebase-common:21.0.0] /home/vassar/.gradle/caches/transforms-3/bb5dd83b2d2d046e8c4935e384b62dda/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+256
+257        <service
+257-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /home/vassar/.gradle/caches/transforms-3/a0aa80799457e9cd420f110c7a5b8f56/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
+258            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+258-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /home/vassar/.gradle/caches/transforms-3/a0aa80799457e9cd420f110c7a5b8f56/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
+259            android:exported="false" >
+259-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /home/vassar/.gradle/caches/transforms-3/a0aa80799457e9cd420f110c7a5b8f56/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
+260            <meta-data
+260-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /home/vassar/.gradle/caches/transforms-3/a0aa80799457e9cd420f110c7a5b8f56/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
+261                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+261-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /home/vassar/.gradle/caches/transforms-3/a0aa80799457e9cd420f110c7a5b8f56/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
+262                android:value="cct" />
+262-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /home/vassar/.gradle/caches/transforms-3/a0aa80799457e9cd420f110c7a5b8f56/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
+263        </service>
+264        <service
+264-->[com.google.android.datatransport:transport-runtime:3.1.9] /home/vassar/.gradle/caches/transforms-3/fa304e0cb3985a111c502887d78604ff/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
+265            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+265-->[com.google.android.datatransport:transport-runtime:3.1.9] /home/vassar/.gradle/caches/transforms-3/fa304e0cb3985a111c502887d78604ff/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
+266            android:exported="false"
+266-->[com.google.android.datatransport:transport-runtime:3.1.9] /home/vassar/.gradle/caches/transforms-3/fa304e0cb3985a111c502887d78604ff/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
+267            android:permission="android.permission.BIND_JOB_SERVICE" >
+267-->[com.google.android.datatransport:transport-runtime:3.1.9] /home/vassar/.gradle/caches/transforms-3/fa304e0cb3985a111c502887d78604ff/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
+268        </service>
+269
+270        <receiver
+270-->[com.google.android.datatransport:transport-runtime:3.1.9] /home/vassar/.gradle/caches/transforms-3/fa304e0cb3985a111c502887d78604ff/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
+271            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+271-->[com.google.android.datatransport:transport-runtime:3.1.9] /home/vassar/.gradle/caches/transforms-3/fa304e0cb3985a111c502887d78604ff/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
+272            android:exported="false" />
+272-->[com.google.android.datatransport:transport-runtime:3.1.9] /home/vassar/.gradle/caches/transforms-3/fa304e0cb3985a111c502887d78604ff/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
+273
+274        <activity
+274-->[com.google.android.gms:play-services-base:18.5.0] /home/vassar/.gradle/caches/transforms-3/b0a5f5b60a4d4d6d467d74c2a91fda01/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+275            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+275-->[com.google.android.gms:play-services-base:18.5.0] /home/vassar/.gradle/caches/transforms-3/b0a5f5b60a4d4d6d467d74c2a91fda01/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+276            android:exported="false"
+276-->[com.google.android.gms:play-services-base:18.5.0] /home/vassar/.gradle/caches/transforms-3/b0a5f5b60a4d4d6d467d74c2a91fda01/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+277            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+277-->[com.google.android.gms:play-services-base:18.5.0] /home/vassar/.gradle/caches/transforms-3/b0a5f5b60a4d4d6d467d74c2a91fda01/transformed/jetified-play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+278
+279        <meta-data
+279-->[com.google.android.gms:play-services-basement:18.4.0] /home/vassar/.gradle/caches/transforms-3/9f9c4164df4b0a685a78f9bb1f59c97c/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+280            android:name="com.google.android.gms.version"
+280-->[com.google.android.gms:play-services-basement:18.4.0] /home/vassar/.gradle/caches/transforms-3/9f9c4164df4b0a685a78f9bb1f59c97c/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+281            android:value="@integer/google_play_services_version" />
+281-->[com.google.android.gms:play-services-basement:18.4.0] /home/vassar/.gradle/caches/transforms-3/9f9c4164df4b0a685a78f9bb1f59c97c/transformed/jetified-play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+282    </application>
+283
+284</manifest>
