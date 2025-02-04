@@ -117,6 +117,22 @@ public class MainActivity extends FlutterActivity {
                 "    reboot\n" +
                 "done";
 
+        /*String script = "#!/system/bin/sh\n" +
+                "LAUNCH_TIME=\"18:39\"\n" +
+                "while true; do\n" +
+                "    CURRENT_TIME=$(date +%H:%M)\n" +
+                "    if [ \"$CURRENT_TIME\" = \"$LAUNCH_TIME\" ]; then\n" +
+                "        input keyevent 26\n" +
+                "        input touchscreen swipe 930 880 930 380\n"+
+                "        input text  1234 \n"+
+                "        sleep 3\n" +
+                "        am start -n com.example.device_auto_launch/.MainActivity\n" +
+                "        sleep 60\n" +
+                "    fi\n" +
+                "    sleep 5\n" +
+                "done";*/
+
+
         try {
             // Write the script to a file
             Process process = Runtime.getRuntime().exec("su");

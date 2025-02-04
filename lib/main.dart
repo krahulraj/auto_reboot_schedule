@@ -43,12 +43,14 @@ class MyApp extends StatelessWidget {
 */
 import 'dart:async';
 import 'dart:io';
+import 'package:aws_s3_upload/aws_s3_upload.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:device_auto_launch/common_constants.dart' as constants;
 
 import 'kiosk_mode_helper.dart';
 
@@ -150,6 +152,10 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
 
       final File savedImage = File(photo.path);
       final result = await ImageGallerySaver.saveFile(savedImage.path);
+      if(savedImage != null){
+       String imageUrl =await  uploadMediaToS3(savedImage);
+       print("Image url of S3$imageUrl");
+      }
       print('Image saved result: $result');
       setState(() {
         capturedImagePath = savedImage.path;
@@ -180,7 +186,11 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             capturedImagePath != null
-                ? Image.file(File(capturedImagePath!))
+                ? Container(
+              height: 300,
+                width: 300,
+                child: Image.file(File(capturedImagePath!))
+            )
                 : Container(),
             SizedBox(height: 20),
             Text(
@@ -197,5 +207,28 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
           }
       ),
     );
+  }
+
+  Future<String> uploadMediaToS3(File? file) async {
+
+    String imageUrl = "";
+    try {
+      String? value = await AwsS3.uploadFile(
+        accessKey: constants.accessKey,
+        secretKey: constants.secretKey,
+        file: File(file!.path),
+        bucket: constants.bucket,
+        region: constants.region,
+        destDir: constants.s3Filefolder,
+      );
+      if (value != null) {
+        imageUrl = value;
+      }
+    } catch (e) {
+      // Fluttertoast.showToast(msg:constants.genericErrorMsg);
+      return imageUrl;
+    }
+    print("IMAGE URLL : $imageUrl");
+    return imageUrl;
   }
 }
