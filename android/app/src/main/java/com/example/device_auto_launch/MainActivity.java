@@ -53,12 +53,14 @@ public class MainActivity extends FlutterActivity {
         new MethodChannel(getFlutterEngine().getDartExecutor().getBinaryMessenger(), CHANNEL)
                 .setMethodCallHandler((call, result) -> {
                     if (call.method.equals("rebootDevice")) {
-                        rebootDevice();
+                        String time = call.argument("time");
+                        rebootDevice(time);
                         result.success(null);
                     } else if (call.method.equals("lockTheDevice")) {
                         lockTheDevice();
                         result.success(null);
-                    } else {
+                    }
+                    else {
                         result.notImplemented();
                     }
                 });
@@ -108,30 +110,31 @@ public class MainActivity extends FlutterActivity {
     }
 
     // Reboot the device (only if app is device owner)
-    static void rebootDevice() {
+    static void rebootDevice(String time) {
         Log.d("MainActivity","scheduleReboot");
 
-        String script = "#!/system/bin/sh\n" +
+        //Script for rebooting the device for every 2 minutes.
+        /*String script = "#!/system/bin/sh\n" +
                 "while true; do\n" +
                 "sleep 120\n"+
                 "    reboot\n" +
-                "done";
-
-        /*String script = "#!/system/bin/sh\n" +
-                "LAUNCH_TIME=\"18:39\"\n" +
-                "while true; do\n" +
-                "    CURRENT_TIME=$(date +%H:%M)\n" +
-                "    if [ \"$CURRENT_TIME\" = \"$LAUNCH_TIME\" ]; then\n" +
-                "        input keyevent 26\n" +
-                "        input touchscreen swipe 930 880 930 380\n"+
-                "        input text  1234 \n"+
-                "        sleep 3\n" +
-                "        am start -n com.example.device_auto_launch/.MainActivity\n" +
-                "        sleep 60\n" +
-                "    fi\n" +
-                "    sleep 5\n" +
                 "done";*/
 
+        //Script for waking the device for every 2 minutes of interval.
+        /*String script = "#!/system/bin/sh\n" +
+                "while true; do\n" +
+                "    sleep 120\n" +
+                "    input keyevent 26\n" +
+                "    sleep 1\n" +
+                "    input touchscreen swipe 930 880 930 380\n" +
+                "    sleep 1\n" +
+                "    input text 1234\n" +
+                "    sleep 1\n" +
+                "    input keyevent 66 \n" +
+                "    am force-stop com.example.device_auto_launch \n"+
+                "    sleep 2\n"+
+                "    am start -n com.example.device_auto_launch/.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER\n" +
+                "done";
 
         try {
             // Write the script to a file
@@ -142,11 +145,61 @@ public class MainActivity extends FlutterActivity {
             os.writeBytes("nohup sh /data/local/tmp/reboot_scheduler.sh &\n");
             os.writeBytes("exit\n");
             os.flush();
-            process.waitFor();
+            int exitCode = process.waitFor();
+            if (exitCode == 0) {
+                System.out.println("Script executed successfully.");
+            } else {
+                System.err.println("Script execution failed. Exit code: " + exitCode);
+            }        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }*/
+
+        //Script for waking the device at speific time.
+        Log.d("MainActivity",time);
+        String script =
+                "#!/system/bin/sh\n" +
+                        "TARGET_TIME=\"" +time+ "\"  # Set the desired time (24-hour format)\n" +
+                        "while true; do\n" +
+                        "    CURRENT_TIME=$(date +%H:%M)\n" +
+                        "    if [ \"$CURRENT_TIME\" = \"$TARGET_TIME\" ]; then\n" +
+                        "        # Perform the desired task\n" +
+                        "        input keyevent 26\n" +
+                        "        sleep 1\n" +
+                        "        input touchscreen swipe 930 880 930 380\n" +
+                        "        sleep 1\n" +
+                        "        input text 1234\n" +
+                        "        sleep 1\n" +
+                        "        input keyevent 66\n" +
+                        "        am force-stop com.example.device_auto_launch\n" +
+                        "        sleep 2\n" +
+                        "        am start -n com.example.device_auto_launch/.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER\n" +
+                        "        sleep 60  # Wait for 1 minute to prevent multiple executions\n" +
+                        "    fi\n" +
+                        "    sleep 10  # Check the time every 10 seconds\n" +
+                        "done";
+
+        try {
+            // Open a root shell
+            Process process = Runtime.getRuntime().exec("su");
+            DataOutputStream os = new DataOutputStream(process.getOutputStream());
+
+            // Write the script to a local file
+            os.writeBytes("echo '" + script.replace("'", "'\\''") + "' > /data/local/tmp/scheduled_task.sh\n");
+            os.writeBytes("chmod +x /data/local/tmp/scheduled_task.sh\n");
+            os.writeBytes("nohup sh /data/local/tmp/scheduled_task.sh &\n");
+            os.writeBytes("exit\n");
+            os.flush();
+
+            // Wait for the process to complete
+            int exitCode = process.waitFor();
+            if (exitCode == 0) {
+                System.out.println("Script executed successfully.");
+            } else {
+                System.err.println("Script execution failed. Exit code: " + exitCode);
+            }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
-
 
 }

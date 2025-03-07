@@ -88,6 +88,7 @@ class CapturePhotosScreen extends StatefulWidget {
 class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
   static String? capturedImagePath;
   static int photoCount = 0;
+  TextEditingController timeController = TextEditingController();
 
   @override
   void initState() {
@@ -135,6 +136,7 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
         return;
       }
 
+      await cameraController.setFlashMode(FlashMode.off);
       final Directory? extDir = await getExternalStorageDirectory();
       print('External directory: $extDir');
       if (extDir == null) {
@@ -153,8 +155,8 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
       final File savedImage = File(photo.path);
       final result = await ImageGallerySaver.saveFile(savedImage.path);
       if(savedImage != null){
-       String imageUrl =await  uploadMediaToS3(savedImage);
-       print("Image url of S3$imageUrl");
+      /* String imageUrl =await  uploadMediaToS3(savedImage);
+       print("Image url of S3$imageUrl");*/
       }
       print('Image saved result: $result');
       setState(() {
@@ -201,12 +203,53 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Text('REboot'),
+        child: Text('Schedule'),
           onPressed: () async {
-            await KioskModeHelper.rebootDevice();
+
+            _showScheduleDailog();
           }
       ),
     );
+  }
+  
+  void _showScheduleDailog(){
+    String? errorMessage;
+    showDialog(context: context, builder: (context){
+      return AlertDialog(
+       title: Text("Schedule Reboot"),
+       content: TextField(
+         controller:timeController,
+         decoration: InputDecoration(
+           labelText: 'Enter time(HH:MM)',
+           border: OutlineInputBorder(
+             borderRadius: BorderRadius.circular(8)
+           ),
+           errorText: errorMessage,
+         ),
+         keyboardType: TextInputType.datetime,
+       ),
+        actions: [
+          TextButton(onPressed:(){
+            Navigator.pop(context);
+          }, child: Text('Cancel')),
+          TextButton(onPressed: ()async{
+            if(timeController.text.isEmpty){
+              setState(() {
+                errorMessage="Please enter time";
+              });
+            }
+           else{
+             setState(() {
+               errorMessage = null;
+             });
+              String time = timeController.text.toString();
+              Navigator.pop(context);
+              await KioskModeHelper.rebootDevice(time);
+            }
+          }, child: Text('Schedule')),
+        ],
+      );
+    });
   }
 
   Future<String> uploadMediaToS3(File? file) async {

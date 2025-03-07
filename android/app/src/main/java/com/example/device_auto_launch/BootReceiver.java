@@ -16,7 +16,7 @@ public class BootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (Intent.ACTION_LOCKED_BOOT_COMPLETED.equals(intent.getAction())) {
-            MainActivity.rebootDevice();
+            MainActivity.rebootDevice("");
             // Device has booted, attempt to unlock the device and launch the app
 
             // Acquire WakeLock to keep the device awake while performing the tasks
