@@ -171,7 +171,7 @@ public class MainActivity extends FlutterActivity {
                         "        sleep 1\n" +
                         "        input keyevent 66\n" +
                         "        am force-stop com.example.device_auto_launch\n" +
-                        "        sleep 2\n" +
+                        "        sleep 5\n" +
                         "        am start -n com.example.device_auto_launch/.MainActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER\n" +
                         "        sleep 60  # Wait for 1 minute to prevent multiple executions\n" +
                         "    fi\n" +

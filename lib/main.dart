@@ -89,19 +89,33 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
   static String? capturedImagePath;
   static int photoCount = 0;
   TextEditingController timeController = TextEditingController();
-
+  CameraController? cameraController;
   @override
   void initState() {
     super.initState();
     _requestPermissions().then((granted) {
       if (granted) {
+        _initializeCamera();
         _startPeriodicPhotos();
       } else {
         print('Permissions not granted');
       }
     });
+
+
   }
 
+  Future<void> _initializeCamera() async {
+    try {
+      final cameras = await availableCameras();
+      final firstCamera = cameras.first;
+      cameraController = CameraController(firstCamera, ResolutionPreset.max);
+      await cameraController!.initialize();
+      print('Camera initialized');
+    } catch (e) {
+      print('Error initializing camera: $e');
+    }
+  }
 
   Future<bool> _requestPermissions() async {
     final cameraStatus = await Permission.camera.request();
@@ -117,63 +131,71 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
   }*/
 
   Future<void> _startPeriodicPhotos() async {
-    await _capturePhoto();
+    try{
+      Future.delayed(Duration(seconds: 3),()async{
+        await _capturePhoto();
+      });
+    }
+    catch(e){
+      print("Error occured while capturing the photo ${e}");
+    }
   }
 
   Future<void> _capturePhoto() async {
     print('capturePhoto method called');
-    CameraController? cameraController;
-    try {
-      final cameras = await availableCameras();
-      print('Cameras available: ${cameras.length}');
-      final firstCamera = cameras.first;
-      cameraController = CameraController(firstCamera, ResolutionPreset.max);
-      await cameraController.initialize();
-      print('Camera initialized: ${cameraController.value.isInitialized}');
+    if(cameraController != null){
+      try {
+        final cameras = await availableCameras();
+        print('Cameras available: ${cameras.length}');
+        // final firstCamera = cameras.first;
+        // cameraController = CameraController(firstCamera, ResolutionPreset.max);
+        print('Camera initialized: ${cameraController!.value.isInitialized}');
 
-      if (!cameraController.value.isInitialized) {
-        print('Camera not initialized');
-        return;
-      }
+        if (!cameraController!.value.isInitialized) {
+          print('Camera not initialized');
+          return;
+        }
 
-      await cameraController.setFlashMode(FlashMode.off);
-      final Directory? extDir = await getExternalStorageDirectory();
-      print('External directory: $extDir');
-      if (extDir == null) {
-        print('Failed to get external storage directory');
-        return;
-      }
+        await cameraController!.setFlashMode(FlashMode.off);
+        final Directory? extDir = await getExternalStorageDirectory();
+        print('External directory: $extDir');
+        if (extDir == null) {
+          print('Failed to get external storage directory');
+          return;
+        }
 
-      if (cameraController.value.isTakingPicture) {
-        print('Already taking picture');
-        return;
-      }
+        if (cameraController!.value.isTakingPicture) {
+          print('Already taking picture');
+          return;
+        }
 
-      final XFile photo = await cameraController.takePicture();
-      print('Photo taken: ${photo.path}');
+        final XFile photo = await cameraController!.takePicture();
+        print('Photo taken: ${photo.path}');
 
-      final File savedImage = File(photo.path);
-      final result = await ImageGallerySaver.saveFile(savedImage.path);
-      if(savedImage != null){
-      /* String imageUrl =await  uploadMediaToS3(savedImage);
+        final File savedImage = File(photo.path);
+        final result = await ImageGallerySaver.saveFile(savedImage.path);
+        if(savedImage != null){
+          /* String imageUrl =await  uploadMediaToS3(savedImage);
        print("Image url of S3$imageUrl");*/
+        }
+        print('Image saved result: $result');
+        setState(() {
+          capturedImagePath = savedImage.path;
+          photoCount++;
+        });
+        print('Image saved: ${savedImage.path}');
+      } on CameraException catch (e) {
+        print('Error capturing photo: $e');
+      } finally {
+        // await cameraController?.dispose();
+        KioskModeHelper.lockTheDevice();
       }
-      print('Image saved result: $result');
-      setState(() {
-        capturedImagePath = savedImage.path;
-        photoCount++;
-      });
-      print('Image saved: ${savedImage.path}');
-    } on CameraException catch (e) {
-      print('Error capturing photo: $e');
-    } finally {
-      await cameraController?.dispose();
-      KioskModeHelper.lockTheDevice();
     }
   }
 
   @override
   void dispose() {
+    cameraController?.dispose();
     super.dispose();
   }
 
@@ -245,6 +267,7 @@ class _CapturePhotosScreenState extends State<CapturePhotosScreen> {
               String time = timeController.text.toString();
               Navigator.pop(context);
               await KioskModeHelper.rebootDevice(time);
+              await KioskModeHelper.lockTheDevice();
             }
           }, child: Text('Schedule')),
         ],
